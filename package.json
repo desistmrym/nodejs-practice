@@ -4,6 +4,7 @@
   "description": "Belajar membuat aplikasi To-Do List menggunakan NodeJS dan Express",
   "main": "app.js",
   "scripts": {
+    "start": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/kirei-open/nodejs-practice/issues"
   },
-  "homepage": "https://github.com/kirei-open/nodejs-practice#readme"
+  "homepage": "https://github.com/kirei-open/nodejs-practice#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1"
+  }
 }
