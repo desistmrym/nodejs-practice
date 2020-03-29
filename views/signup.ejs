@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="/style.css">
+    <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/> -->
+   <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+   <link rel="icon" type="image/png" href="/icon1.png"/>
+</head>
+<body>
+    <div class="todos">
+        <div class="panel-heading">
+            <div style="float:right; font-size: 85%; position: relative; top:-10px"><a id="signinlink" href="/signin">Sign In</a></div>
+            <img src="/icon.png" class="mx-auto d-block" style="width: 90px;"></img>
+            <div class="panel-title"><h1 align="center">Sign Up</h1></div>
+        </div> 
+        <div class="panel-body" style="padding-top:30px">
+            <form class="form-horizontal" role="form" method="post" action="/signup" onSubmit="return checkblank(this);">
+                <% if (message.length > 0) { %>
+                    <div class="alert alert-success col-sm-12"><%= message %></div>
+                <% } %>
+                <% if (message1.length > 0) { %>
+                    <div class="alert alert-danger col-sm-12"><%= message1 %></div>
+                <% } %>
+                <div id="signupalert" style="display:none" class="alert alert-danger" id="errors">
+                    <p>Error:</p>
+                    <span></span>
+                </div>
+                <div class="col-auto">
+                    <label class="sr-only" for="inlineFormInputGroup">Full Name</label>
+                    <div class="input-group mb-2">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text fas fa-user"></div>
+                      </div>
+                      <input type="text" class="form-control" id="inlineFormInputGroup" name="full_name" placeholder="Full Name" required>
+                    </div>
+                </div>
+                <div class="col-auto">
+                    <label class="sr-only" for="inlineFormInputGroup">Mobile Phone</label>
+                    <div class="input-group mb-2">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text fas fa-phone"></div>
+                      </div>
+                      <input type="text" class="form-control" id="inlineFormInputGroup" name="no_tlp" placeholder="Mobile Phone" required>
+                    </div>
+                </div>
+                <div class="col-auto">
+                    <label class="sr-only" for="inlineFormInputGroup">Email</label>
+                    <div class="input-group mb-2">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text fas fa-envelope"></div>
+                      </div>
+                      <input type="email" class="form-control" id="inlineFormInputGroup" name="email" placeholder="Email" required>
+                    </div>
+                </div>
+                <div class="col-auto">
+                    <label class="sr-only" for="inlineFormInputGroup">Password</label>
+                    <div class="input-group mb-2">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text fas fa-lock"></div>
+                      </div>
+                      <input type="password" class="form-control" id="inlineFormInputGroup" name="password" placeholder="Password" required maxlength="8" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Harus 8 karakter':''); if (this.checkValidity()) form.passwordMatch.pattern = this.value;">
+                    </div>
+                </div>
+                <div class="col-auto">
+                    <label class="sr-only" for="inlineFormInputGroup passwordMatch">Re-Password</label>
+                    <div class="input-group mb-2">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text fas fa-lock"></div>
+                      </div>
+                      <input type="password" class="form-control" id="inlineFormInputGroup" name="passwordMatch" placeholder="Re-Password" required maxlength="8" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Password tidak sama' : '');" onfocus="this.value=''">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <!-- Button -->                                       
+                    <div class="col-md-offset-3 col-md-9">
+                        <button id="btn-signup" type="submit" class="btn btn-info"><i class="icon-hand-right"></i> &nbsp Sign Up</button>
+                    </div>
+                </div> 
+            </form>
+        </div>
+    </div>    
+     </div>
+</div>
+</body>
+</html>

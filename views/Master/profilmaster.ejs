@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil</title>
+    <link rel="icon" type="image/png" href="/icon1.png"/>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="/style1.css">
+    <link rel="stylesheet" href="/style.css">
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+</head>
+<body>
+  <section class="nav-bar">
+    <div class="nav-container">
+      <div class="brand">
+        <a href="https://webdevtrick.com/"><img src="/icon1.png"></a>
+      </div>
+      <nav>
+        <div class="nav-mobile"><a id="nav-toggle" href=""><span></span></a></div>
+        <ul class="nav-list">
+          <li>
+            <a href="/master">Home</a>
+          </li>
+          <li>
+            <a href="/master/profil">Profil</a>
+          </li>
+          <li>
+            <a href="/master/user">Users</a>
+          </li>
+          <li>
+            <a href="/logout">Logout</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </section>
+  <div class="todos">
+    <div class="row">
+        <div >
+          <div>
+            <div class="panel-heading">
+              <h3 class="panel-title"><%=data[0].full_name%></h3><div style="float:right; font-size: 85%; position: relative; top:-10px"><a id="signinlink" href="/master/edit" class="fa fa-edit"></a></div>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="/avatar.png" class="img-circle img-responsive"> </div>
+                <div class=" col-md-9 col-lg-9 "> 
+                  <table class="table table-user-information">
+                    <tbody>
+                      <tr>
+                        <td>Email:</td>
+                        <td><%=data[0].email%></td>
+                      </tr>
+                      <tr>
+                        <td>Mobile:</td>
+                        <td><%=data[0].no_tlp%></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+        </div>
+  </div>
+</body>
+</html>

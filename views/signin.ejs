@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Sign In</title>
+	<!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+    <link rel="icon" type="image/png" href="/icon1.png"/>
+    <link rel="stylesheet" href="/style.css">
+    <!-- <script type = "text/javascript" >
+        function preventBack(){window.history.forward();}
+        setTimeout("preventBack()", 0);
+        window.onunload=function(){null};
+    </script> -->
+</head>
+<body>
+    <div class="todos">
+        <img src="/icon.png" class="mx-auto d-block" style="width: 90px;"></img>
+        <div class="panel-heading">
+            <div class="panel-title"><h1 align="center">Sign Up</h1></div>
+                        <!--<div style="float:right; font-size: 80%; position: relative; top:-10px"><a href="#">Forgot password?</a></div>-->
+                    </div>    
+ 
+                    <div style="padding-top:30px" class="panel-body" >
+                            <% if (message1.length > 0) { %>
+                                <div class="alert alert-danger col-sm-12"><%= message1 %></div>
+                            <% } %>
+                            <% if (message.length > 0) { %>
+                                <div class="alert alert-success col-sm-12"><%= message %></div>
+                            <% } %>
+                           
+                        <form id="loginform" class="form-horizontal" role="form" method="post" action="/signin">
+                            <div class="col-auto">
+                                <label class="sr-only" for="inlineFormInputGroup">Email</label>
+                                <div class="input-group mb-2">
+                                  <div class="input-group-prepend">
+                                    <div class="input-group-text fas fa-envelope"></div>
+                                  </div>
+                                  <input id="login-email" type="text" class="form-control" id="inlineFormInputGroup" name="email" placeholder="Email">
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <label class="sr-only" for="inlineFormInputGroup">Password</label>
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text fas fa-lock"></div>
+                                    </div>
+                                    <input id="login-password" type="password" class="form-control" name="password" id="inlineFormInputGroup" placeholder="Password">
+                                </div>
+                            </div>
+                            <div style="margin-top:10px" class="form-group">
+                                <!-- Button -->
+                                <div class="col-sm-12 controls">
+                                    <button id="btn-login" type="submit" class="btn btn-primary">Login  </button>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-12 control">
+                                    <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%" >
+                                        Don't have an account!
+                                        <a href="/signup">
+                                            Sign Up Here
+                                        </a>
+                                        </div>
+                                    </div>
+                                </div>   
+                            </form>
+                        </div>                    
+                    </div> 
+    </div>
+</body>
+</html>

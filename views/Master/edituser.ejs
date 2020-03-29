@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit User</title>
+    <link rel="icon" type="image/png" href="/icon1.png"/>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/style1.css">
+    <link rel="stylesheet" href="/style.css">
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+</head>
+<body>
+  <section class="nav-bar">
+    <div class="nav-container">
+      <div class="brand">
+        <a href="https://webdevtrick.com/"><img src="/icon1.png"></a>
+      </div>
+      <nav>
+        <div class="nav-mobile"><a id="nav-toggle" href=""><span></span></a></div>
+        <ul class="nav-list">
+          <li>
+            <a href="/master">Home</a>
+          </li>
+          <li>
+            <a href="/master/profil">Profil</a>
+          </li>
+          <li>
+            <a href="/master/users">Users</a>
+          </li>
+          <li>
+            <a href="/logout">Logout</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </section>
+  <div class="todos">
+    <h4>Edit Profil</h4>
+    <% for(var i = 0; i < data.length; i++) { %>
+    <form action="/user/edit/<%= data[i].id %>" method="POST">
+        <div class="form-grup">
+            <label for="email">Email</label>
+            <input 
+                type="text" class="form-control" id="email" name="email" value="<%= data[i].email %>" readonly/>
+        </div>
+        <div class="form-grup">
+            <label for="full_name">Full Name</label>
+            <input 
+                type="text" class="form-control" id="full_name" name="full_name" value="<%= data[i].full_name %>"/>
+        </div>
+        <div class="form-grup">
+            <label for="no_tlp">No Tlp</label>
+            <input 
+                type="text" class="form-control" id="no_tlp" name="no_tlp" value="<%= data[i].no_tlp %>"/>
+        </div>
+        <div class="form-grup">
+            <label for="password">Password</label>
+            <input 
+                type="password" class="form-control" id="password" name="password" placeholder="Password" required maxlength="8" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Harus 8 karakter':''); if (this.checkValidity()) form.passwordMatch.pattern = this.value; " />
+        </div>
+        <div class="form-group">
+          <label for="passwordMatch" class="control-label">Re-Password</label>
+              <input type="password" class="form-control" name="passwordMatch" placeholder="Re-Password" required maxlength="8" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Password tidak sama' : '');" onfocus="this.value=''" required>
+      </div>
+        <div>
+            <button type="submit" class="button-add">Edit</button>
+            <a href="/master/user" class="button-cancel">Cancel</a>
+        </div>
+    </form>
+    <% } %>
+</div>
+</div>
+</body>
+</html>

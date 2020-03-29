@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hapus Data</title>
+    <link rel="stylesheet" href="/style1.css">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+</head>
+<body>
+    <section class="nav-bar">
+        <div class="nav-container">
+          <div class="brand">
+            <a href="https://webdevtrick.com/"><img src="/icon1.png"></a>
+          </div>
+          <nav>
+            <div class="nav-mobile"><a id="nav-toggle" href=""><span></span></a></div>
+            <ul class="nav-list">
+              <li>
+                <a href="/home">Home</a>
+              </li>
+              <li>
+                <a href="/home/profil">Profil</a>
+              </li>
+              <li>
+                <a href="/logout">Logout</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </section>
+      <div class="todos">
+        <h1> To-Do App 
+            <a href="/home">
+                <span class=" button-back button5 fa fa-angel-left"></span>
+            </a>
+        </h1>
+        <div class="todis">
+        <ul class="todo-list">
+            <% for(var i = 0; i < data.length; i++) { %>
+            <li class="todo-list-item">
+            <div>
+                <%= data[i].title %>
+            </div>
+                <a href="/hapus/<%= data[i].id %>" class="edit">
+                    <span class="button-minus button5 fas fa-minus"></span>
+                </a>
+            </li>
+            <% } %> 
+        </ul>
+      </div>
+   </div>
+   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</body>
+</html>

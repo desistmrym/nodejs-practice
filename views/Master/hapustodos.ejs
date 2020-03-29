@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hapus Todos</title>
+    <link rel="icon" type="image/png" href="/icon1.png"/>
+    <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="/style1.css">
+    <link rel="stylesheet" href="/style.css">
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+    <script src="https://kit.fontawesome.com/yourcode.js"></script> 
+</head>
+<body>
+  <section class="nav-bar">
+    <div class="nav-container">
+      <div class="brand">
+        <a href="https://webdevtrick.com/"><img src="/icon1.png"></a>
+      </div>
+      <nav>
+        <div class="nav-mobile"><a id="nav-toggle" href=""><span></span></a></div>
+        <ul class="nav-list">
+          <li>
+            <a href="/master">Home</a>
+          </li>
+          <li>
+            <a href="/master/profil">Profil</a>
+          </li>
+          <li>
+            <a href="/master/users">Users</a>
+          </li>
+          <li>
+            <a href="/logout">Logout</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </section>
+  <div class="todos">
+    <h1 class="mb-4"> To-Do App 
+        <a href="/master">
+            <span class="button-back button5 fas fa-less-than"></span>
+        </a>
+    </h1>
+    <div class="todis">
+    <ul class="todo-list">
+        <% for(var i = 0; i < data.length; i++) { %>
+        <li class="todo-list-item">
+            <%= data[i].title %>
+            <a href="/master/hapus/<%= data[i].id %>" class="hapus"></a>
+                <span class="button-hapus button5 fas fa-minus"></span>
+            </a>
+        </li>
+        <% } %> 
+    </ul>
+  </div>
+</div>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</body>
+</html>
